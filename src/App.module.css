@@ -1,0 +1,26 @@
+.taskBoard {
+    margin-top: 4rem;
+    width: 46rem;
+    color: var(--gray-100);
+    margin-bottom: 3rem;
+  }
+
+.taskBoard > header{
+    display: flex;
+    margin-bottom: 1.5rem;
+    justify-content: space-between;    
+}
+
+.taskBoard > header > p:first-child{
+    color: var(--blue);
+}
+
+.taskBoard > header > p:last-child{
+    color: var(--purple);
+}
+
+main{
+    justify-content: center;
+    display: flex;
+    
+}
