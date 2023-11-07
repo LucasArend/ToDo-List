@@ -1,6 +1,8 @@
 import styles from './Task.module.css'
 import { Trash } from '@phosphor-icons/react'
 
+//task[isComplete=boolean, titulo=string, id=uuidv4]
+// publishedAt: Date
 
 export function Task(props) {
     return (

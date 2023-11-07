@@ -1,29 +1,17 @@
 import { Header } from './components/Header'
 import {Task} from './components/Task'
-import { SearchBar } from './components/SearchBar'
-import {uuid} from 'uuid'
+import { SetTaskBar } from './components/SetTaskBar'
+
 
 import styles from './App.module.css'
 
 import './global.css'
 
-//task[isComplete=boolean, titulo=string, id=uuidv4]
-// publishedAt: Date
-
-const tasks = [
-  {
-    id: uuid,
-    titulo: string,
-    isComplete: boolean,
-  },
-  
-]
-
 export function App() {
   return (
     <div>
       <Header />
-      <SearchBar />
+      <SetTaskBar />
     <main>
       <div className={styles.taskBoard}>
         <header>
