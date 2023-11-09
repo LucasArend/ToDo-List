@@ -1,41 +1,83 @@
+import { useState } from 'react';
 import { Header } from './components/Header'
 import {Task} from './components/Task'
-import { SetTaskBar } from './components/SetTaskBar'
-
+import { TaskBar } from './components/TaskBar'
+import {v4 as uuidV4} from 'uuid'
 
 import styles from './App.module.css'
 
 import './global.css'
+  
+export interface ITask{
+  id: string;
+  title: string;
+  isComplete: boolean;
+}
 
 export function App() {
+
+  const [tasks, setTasks] = useState<ITask[]>([
+  ]);
+
+  function addTask(taskTitle: string){
+    setTasks([
+        ...tasks,
+        {
+            id: uuidV4(),
+            title: taskTitle,
+            isComplete:  false
+        }
+    ])
+  }
+
+  function deleteTaskById(taskId: String){
+    const newTasks = tasks.filter((task) => task.id !== taskId);
+    setTasks(newTasks);
+  }
+
+  function toggleTaskIsCompletedById(taskId: String){
+    const newTasks = tasks.map((task) => {
+        if(task.id === taskId){
+            return{
+                ...task,
+                isCompleted: !task.isComplete,
+            };
+        }
+        return task;
+    });
+    setTasks(newTasks);
+  }
+
+  const taskQuantity = tasks.length
+
+  const completedTasks = tasks.filter((task)=>task.isComplete).length
   return (
     <div>
       <Header />
-      <SetTaskBar />
+      <TaskBar onAddTask={addTask}/>
     <main>
       <div className={styles.taskBoard}>
         <header>
-          <p>To Do</p>
-          <p>Finished</p>
+            <p>
+                To Do
+                <span>
+                    {taskQuantity}
+                </span>
+            </p>
+             <p>
+                Finished
+                <span>
+                    {completedTasks} of {taskQuantity}
+                </span>
+            </p>
         </header>
-        <Task
-          content="tarefa 1"
-        />
-        <Task
-          content="Tarefa 2"
-        />
-        <Task
-          content="Tarefa 3"
-        />
-        <Task
-          content="Tarefa 4"
-        />
-        <Task
-          content="Tarefa 5"
-        />
-        <Task
-          content="Tarefa 6"
-        />
+        {tasks.map(targetTask => {
+            return <Task
+            targetTask={targetTask}
+            key={targetTask.id}
+            onDelete={deleteTaskById}
+            onToggle={toggleTaskIsCompletedById}
+            />})}
       </div>
     </main>
   </div>

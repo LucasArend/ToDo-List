@@ -15,8 +15,34 @@
     color: var(--blue);
 }
 
+.taskBoard > header > p:first-child span{
+    margin-left: 1rem ;
+    background-color: var(--gray-400);
+    padding: 0.13rem 0.6rem;
+    border-radius: 999px;
+    color: var(--gray-200);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
 .taskBoard > header > p:last-child{
     color: var(--purple);
+}
+
+.taskBoard > header > p:last-child span{
+    margin-left: 1rem ;
+    background-color: var(--gray-400);
+    padding: 0.13rem 0.6rem;
+    border-radius: 999px;
+    color: var(--gray-200);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
 }
 
 main{

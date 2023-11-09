@@ -1,18 +1,30 @@
+import { ITask } from '../App'
 import styles from './Task.module.css'
-import { Trash } from '@phosphor-icons/react'
+import { Trash, Check } from '@phosphor-icons/react'
 
-//task[isComplete=boolean, titulo=string, id=uuidv4]
-// publishedAt: Date
+interface Props{
+    targetTask:ITask;
+    onDelete:(taskID:string) => void;
+    onToggle:(taskID:string) => void;
+}
 
-export function Task(props) {
+export function Task({targetTask, onDelete, onToggle}:Props) {
+    const isCompleted = true
+
     return (
+        
         <article className={styles.task}>
             <div>
-                <input type="checkbox" id="todo" name="todo" value="todo"/>
-                <label content="Get out of bed">Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</label>
+                <button
+                    className={styles.checkContainer}
+                    onClick = {() => onToggle(targetTask.id)}
+                >
+                    {isCompleted ? <Check/> : <div/>}
+                </button>
+                <label content="Get out of bed">{targetTask.title}</label>   
             </div>
-            <button title="Delete task">
-                <Trash size={20}/>
+            <button className={styles.trashContainer} title="Delete task" onClick={() => onDelete(targetTask.id)}>
+                <Trash size={20} />
             </button>
         </article>
     )
