@@ -21,6 +21,10 @@
     align-items: center;
     gap: 0.5rem;
     overflow: hidden;
+    color: var(--white);
+  }
+
+  .wrapper textarea::placeholder{
     color: var(--gray-300);
   }
 

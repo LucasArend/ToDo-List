@@ -30,6 +30,8 @@
     height: 1.125rem;
     background: none;
     border: none;
+    cursor: pointer;
+    border-radius: 50%;
 }
 
 .checkContainer div{
@@ -39,20 +41,49 @@
     border-radius: 50%;
 }
 
+
 .checkContainer svg{
     width: 100%;
     height: 100%;
-    color: var(--purple)
+    color: var(--white);
+    background-color: var(--purple);
+    border-radius: 50%;
+    margin-bottom: 0.625rem;
+    animation-name: appear;
+    animation-duration: 0.5s;
 }
 
-label {
-  position: relative;
-  cursor: pointer;
-  font-size: 0.875em;
-  padding: 0 0.50em 0;
-  user-select: none;
 
-  transition: 0.5s;
+
+@keyframes appear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+@keyframes changeCollor {
+    from {border: var(--blue);}
+    to {border: var(--purple);}
+  }
+
+.task p {
+    position: relative;
+    font-size: 0.875em;
+    padding: 0 0.50em 0;
+    user-select: none;
+    transition: 0.5s;
+    margin-right: auto;
+}
+
+p.textCompleted {
+    color: var(--gray-300);
+    text-decoration: line-through;
+  }
+
+div.divCompleted{
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--purple);
+    border-radius: 50%;
 }
 
 

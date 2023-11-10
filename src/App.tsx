@@ -25,27 +25,29 @@ export function App() {
         {
             id: uuidV4(),
             title: taskTitle,
-            isComplete:  false
+            isComplete: false,
         }
     ])
   }
 
-  function deleteTaskById(taskId: String){
+  function deleteTaskById(taskId: string){
     const newTasks = tasks.filter((task) => task.id !== taskId);
     setTasks(newTasks);
   }
 
-  function toggleTaskIsCompletedById(taskId: String){
+  function toggleTaskIsCompletedById(taskId: string){
     const newTasks = tasks.map((task) => {
         if(task.id === taskId){
+            console.log(!task.isComplete)
             return{
                 ...task,
-                isCompleted: !task.isComplete,
-            };
+                isComplete: !task.isComplete,
+            }
         }
         return task;
     });
     setTasks(newTasks);
+    console.log(newTasks);
   }
 
   const taskQuantity = tasks.length
