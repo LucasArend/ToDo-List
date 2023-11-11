@@ -1,27 +1,22 @@
-# React + TypeScript + Vite
+# React ToDo list challange
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# About the challenge
 
-Currently, two official plugins are available:
+In this challenge, was asked to develop a task control application in the **to-do list** style, which contains the following features:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add a new task
+- Mark and unmark a task as completed
+- Remove a task from the list
+- Show task completion progress
 
-## Expanding the ESLint configuration
+Although they have few features, i need to remember concepts such as:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- States
+- Immutability of the state
+- Lists and keys in ReactJS
+- Properties
+- Componentization
 
-- Configure the top-level `parserOptions` property like this:
+#Figma reference model
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+https://www.figma.com/file/cZmbIH4uOuy6QXfOYytRRm/ToDo-List-%E2%80%A2-Desafio-React-(Copy)?node-id=56%3A96&mode=dev
