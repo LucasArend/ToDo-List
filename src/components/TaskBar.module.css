@@ -32,7 +32,7 @@
     border: var(--purple);
   }
 
-  .wrapper button{
+  .wrapper button[type=submit]{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,4 +40,14 @@
     border: 1px solid var(--blue-dark);
     background: var(--blue-dark);
     color: var(--white);
+    transition: 0.5s;
   }
+
+  .wrapper button[type=submit]:not(:disabled):hover{
+    background: var(--blue);
+  }
+
+  .wrapper button:disabled{
+    opacity: 0.8;
+  }
+

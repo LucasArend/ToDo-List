@@ -17,7 +17,12 @@ export function TaskBar({onAddTask}:Props) {
     }
 
     function onChangeTitle(event: ChangeEvent<HTMLInputElement>){
+        event.target.setCustomValidity('')
         setTitle(event.target.value)
+    }
+
+    function handleNewTaskInvalid(event: ChangeEvent<HTMLInputElement>){
+        event.target.setCustomValidity('Required field!')
     }
 
 
@@ -28,9 +33,11 @@ export function TaskBar({onAddTask}:Props) {
                 placeholder='Adicione uma nova tarefa'
                 onChange={onChangeTitle}
                 value={title}
+                onInvalid={handleNewTaskInvalid}
+                required
                 >
             </textarea> 
-            <button type='submit'>Criar +</button> 
+            <button type='submit' disabled={title.length === 0}>Criar +</button> 
     </form>
     );
   }

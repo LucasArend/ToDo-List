@@ -84,6 +84,8 @@ div.divCompleted{
     height: 100%;
     border: 2px solid var(--purple);
     border-radius: 50%;
+    animation-name: changeCollor;
+    animation-duration: 0.2s;
 }
 
 
